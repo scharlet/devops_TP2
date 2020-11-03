@@ -1,6 +1,6 @@
 language: java
 script:
-  # Test and build app
+  # Test and build your app with docker
   - mvn clean verify --file ./simple-api/pom.xml
 
   # Connexion à docker
