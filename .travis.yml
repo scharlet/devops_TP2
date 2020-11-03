@@ -1,4 +1,4 @@
 language: java
 script:
-  # test and build your application with maven
+  # Test and build your application with maven
   - mvn clean verify --file ./simple-api/pom.xml
