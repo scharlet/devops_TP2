@@ -8,9 +8,15 @@ script:
 
   # Build
   - docker build -t $DOCKER_USERNAME/devops_tp2 simple-api
+  - docker build -t $DOCKER_USERNAME/database database
+  - docker build -t $DOCKER_USERNAME/httpd httpd
+
+  # docker run -p 8888:5000 --name myfirstapp YOUR_USERNAME/myfirstapp
 
   # Publication des images
   - docker push $DOCKER_USERNAME/devops_tp2
+  - docker push $DOCKER_USERNAME/database
+  - docker push $DOCKER_USERNAME/httpd
 
 on:
   branch: develop
