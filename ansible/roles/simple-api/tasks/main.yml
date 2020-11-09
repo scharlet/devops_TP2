@@ -1,0 +1,11 @@
+# tasks file for roles/simple-api
+- name: Run application
+  docker_container:
+    name: backend
+    image: scharlet/devops_tp2
+    env:
+      SPRING_DATASOURCE_USERNAME: usr
+      SPRING_DATASOURCE_PASSWORD: pwd
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://database:5432/db"
+    networks:
+      - name: "network_one"
