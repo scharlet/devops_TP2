@@ -7,10 +7,10 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   # Build
-  - docker build -t $DOCKER_USERNAME/devops_TP2 simple-api
+  - docker build -t $DOCKER_USERNAME/devops_tp2 simple-api
 
   # Publication des images
-  - docker push $DOCKER_USERNAME/devops_TP2
+  - docker push $DOCKER_USERNAME/devops_tp2
 
 on:
   branch: develop
