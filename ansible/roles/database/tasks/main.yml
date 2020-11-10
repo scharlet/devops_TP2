@@ -3,6 +3,7 @@
   docker_container:
     name: database
     image: scharlet/database
+    pull: yes
     env: 
       POSTGRES_PASSWORD: pwd
       POSTGRES_USER: usr
