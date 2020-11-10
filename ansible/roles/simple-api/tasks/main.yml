@@ -1,12 +1,16 @@
 # tasks file for roles/simple-api
 - name: Run application
   docker_container:
+    # On donne un nom à notre conteneur
     name: backend
+    # On récupère l'image sur Docker Hub
     image: scharlet/devops_tp2
+    # On retélécharge à chaque fois notre image docker
     pull: yes
     env:
       SPRING_DATASOURCE_USERNAME: usr
       SPRING_DATASOURCE_PASSWORD: pwd
       SPRING_DATASOURCE_URL: "jdbc:postgresql://database:5432/db"
+    # On relie notre application à notre réseau pour qu'elle puisse communiquer avec la base de donnée et le serveur proxy
     networks:
       - name: "network_one"

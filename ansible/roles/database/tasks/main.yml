@@ -1,12 +1,17 @@
 # tasks file for roles/database
 - name: Run database
   docker_container:
+    # On donne un nom à notre conteneur
     name: database
+    # On récupère l'image sur Docker Hub
     image: scharlet/database
+    # On retélécharge à chaque fois notre image docker
     pull: yes
+    # On définie les variables d'environnement qui sont dans le .env de notre dossier database
     env: 
       POSTGRES_PASSWORD: pwd
       POSTGRES_USER: usr
       POSTGRES_DB: db
+    # On relie notre base de donnée à notre réseau pour qu'elle puisse communiquer avec l'application et le serveur proxy
     networks:
       - name: "network_one"

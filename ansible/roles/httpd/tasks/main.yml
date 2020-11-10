@@ -1,10 +1,15 @@
 # tasks file for roles/httpd
 - name: Run HTTPD
   docker_container:
+    # On donne un nom à notre conteneur
     name: httpd
+    # On récupère l'image sur Docker Hub
     image: scharlet/httpd
+    # On retélécharge à chaque fois notre image docker
     pull: yes
+    # On définit les ports exposés pour communiquer avec le conteneur
     ports:
       - 80:80
+    # On relie notre serveur proxy à notre réseau pour qu'il puisse communiquer avec la base de donnée et l'application
     networks:
       - name: "network_one"
