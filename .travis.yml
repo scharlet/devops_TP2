@@ -2,7 +2,7 @@ language: java
 script:
   # Test and build your app with docker 
   - mvn clean verify --file ./simple-api/pom.xml
-  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=scharlet_devops_TP2
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=devops_TP2
 
   # Connexion à docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
@@ -32,5 +32,4 @@ services:
 addons:
   sonarcloud:
     organization: "scharlet"
-    token:
-      secure: "$SONARCLOUD_TOKEN"
+    token: "$SONARCLOUD_TOKEN"
