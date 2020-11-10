@@ -1,7 +1,7 @@
 language: java
 script:
   # Test and build your app with docker 
-  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=devops_TP2
+  - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=scharlet_devops_tp2
   - mvn clean verify --file ./simple-api/pom.xml
 
   # Connexion à docker
