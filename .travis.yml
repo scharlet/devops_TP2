@@ -22,7 +22,8 @@ script:
 addons:
   sonarcloud:
     organization: "scharlet"
-    token: "$SONARCLOUD_TOKEN"
+    token: 
+      secure: "$SONARCLOUD_TOKEN"
 
 on:
   branch: develop
